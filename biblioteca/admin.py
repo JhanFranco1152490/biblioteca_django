@@ -42,5 +42,5 @@ class ResenaAdmin(admin.ModelAdmin):
     list_filter = ["libro"]  # Filtra por libro para que queden juntos
     date_hierarchy = "fecha"  # Filtra el listado por fechas mas facilmente
     list_editable = ["calificacion"]  # Permite editar campos desde la vista general
-    list_per_page = 50  # Limita la cantidad maxima de filas
+    list_per_page = 20  # Limita la cantidad maxima de filas
     readonly_fields = ["fecha"]  # Prohibe editar campos
