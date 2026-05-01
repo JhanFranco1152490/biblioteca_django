@@ -2,7 +2,7 @@
 
 ## Ejecutar localmente
 
-> **Requisito:** Sistema UNIX-like (Linux, macOS) o WSL en Windows.
+> **Requisito:** Sistema UNIX-like (Linux, macOS) o WSL en Windows para los siguientes comandos (En Windows puede conllevar mas configuración previa para funcionar).
 
 Primero que todo debemos ubicarnos en nuestro repositorio clonado.
 
