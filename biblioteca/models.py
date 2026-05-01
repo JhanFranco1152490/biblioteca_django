@@ -25,7 +25,7 @@ class Libro(models.Model):
 class Resena(models.Model):
     libro = models.ForeignKey(Libro, on_delete=models.CASCADE, related_name="resenas")
     texto = models.TextField()
-    calificacion = models.IntegerField(validators=[range_validator(min=1, max=5)])
+    calificacion = models.IntegerField(validators=[range_validator(min_value=1, max_value=5)])
     fecha = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
