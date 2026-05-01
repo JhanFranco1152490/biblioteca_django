@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Author(models.Model):
     nombre = models.CharField(max_length=100)
     nacionalidad = models.CharField(max_length=100)
@@ -7,17 +8,21 @@ class Author(models.Model):
     def __str__(self):
         return self.nombre
 
+
 class Libro(models.Model):
     titulo = models.CharField(max_length=100)
-    autor = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name='libros')
+    autor = models.ForeignKey(
+        Author, on_delete=models.SET_NULL, null=True, related_name="libros"
+    )
     fecha_publicacion = models.DateField()
     resumen = models.TextField()
 
     def __str__(self):
         return f"{self.titulo} by {self.autor.nombre if self.autor else "..."}"
-    
+
+
 class Resena(models.Model):
-    libro = models.ForeignKey(Libro, on_delete=models.CASCADE, related_name='resenas')
+    libro = models.ForeignKey(Libro, on_delete=models.CASCADE, related_name="resenas")
     texto = models.TextField()
     calificacion = models.IntegerField()
     fecha = models.DateTimeField(auto_now_add=True)
